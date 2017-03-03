@@ -1,0 +1,23 @@
+{
+  "name": "nunj-starter",
+  "version": "1.0.1",
+  "description": "A simple project starter for Nunjucks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/efdutra/nunj-starter.git"
+  },
+  "keywords": [
+    "nunj",
+    "nunjucks"
+  ],
+  "author": "Eduardo F. Dutra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/efdutra/nunj-starter/issues"
+  },
+  "homepage": "https://github.com/efdutra/nunj-starter#readme"
+}
