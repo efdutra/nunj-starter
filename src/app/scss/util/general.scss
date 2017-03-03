@@ -1,0 +1,51 @@
+* {
+    font-family: 'Open Sans', sans-serif!important;
+}
+
+html {
+    height: 100%;
+}
+
+body {}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+.inner {
+    padding: 0 5%;
+}
+
+.loading {
+    background: url(/img/general/loading.gif) no-repeat center center;
+    background-size: 50px;
+}
+
+.loading.l-200 {
+    background-size: 200px;
+}
+
+@include scrollbars(10px, darken($primary, 10));
+
+@include media('tablet'){}
+
+@include media('desktop'){
+    body {
+        .inner {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+    }
+}
+
+@include media('desktop-large'){
+    body {
+        .inner {
+            max-width: 1280px;
+        }
+    }
+}

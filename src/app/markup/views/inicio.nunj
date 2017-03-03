@@ -1,0 +1,7 @@
+{% extends "./app/markup/layouts/index.nunj" %}
+
+{% block content %}
+
+<section></section>	
+    
+{% endblock %}

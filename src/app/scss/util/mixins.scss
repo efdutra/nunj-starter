@@ -1,0 +1,116 @@
+@mixin transition($prop : all, $time : 0.5s){
+  transition: $prop $time;
+}
+
+@mixin iefix() {
+  .ie8 &,
+  .ie9 & {
+    @content;
+  }
+}
+
+@mixin animation($time:1s){
+  animation: defaultAnimation $time infinite;
+  @keyframes defaultAnimation {
+    0% {
+      transform: translate(-50%,10%);
+    }
+    50% {
+      transform: translate(-50%,40%);
+    }
+    100% {
+      transform: translate(-50%,10%);
+    }
+  }
+}
+
+@mixin makeCol($size, $isFloat : false, $floatSide : left) {
+  width: 100/$size + %;
+  @if $isFloat == true {
+    float: $floatSide;
+  } @else {
+    display: inline-block;
+    margin-right: -4px;
+  }
+}
+
+@mixin makeArrow($direction : "top", $size : 10px, $color : black){
+    border: $size solid transparent; 
+    @if $direction == "top" {
+      border-bottom: $size solid $color;
+    }
+    @else if $direction == "right" {
+      border-left: $size solid $color;
+    }
+    @else if $direction == "bottom" {
+      border-top: $size solid $color;
+    }
+    @else if $direction == "left" {
+      border-right: $size solid $color;  
+    }
+}
+
+@mixin media($point) {
+    @if $point == "min-tablet" {
+        @media (min-width: 600px) { @content; }
+    }
+    @else if $point == "tablet" {
+        @media (min-width: 768px) { @content; }
+    }
+    @else if $point == "desktop" {
+        @media (min-width: 992px) { @content; }
+    }
+    @else if $point == "desktop-small" {
+        @media (min-width: 992px) and (max-width: 1024px) { @content; }
+    }
+    @else if $point == "desktop-large" {
+        @media (min-width: 1367px) { @content; }
+    }
+}
+
+@mixin font($family : inherit, $size: inherit, $color: $black, $weight: inherit, $transform: none, $style: inherit){
+    font-family: $family;
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    text-transform: $transform;
+    font-style: $style;
+
+    @include iefix() {
+      font-size: $size;
+    }
+}
+
+@mixin clearfix(){
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+    display: block;
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  // For Google Chrome
+  ::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: transparent;
+    scrollbar-track-color: transparent;
+  }
+}

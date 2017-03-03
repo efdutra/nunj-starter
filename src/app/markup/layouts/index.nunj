@@ -1,0 +1,47 @@
+{% set metadatas = [
+	{ name : "viewport", content : "width=device-width, height=device-height, initial-scale=1.0, user-scalable=no"},
+	{ name : "theme-color", content : "#000" }
+] %}
+{% set id = "inicio" %}
+
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html lang="pt-br" class="ie8">
+<![endif]-->
+<!--[if gt IE 8]>
+<html lang="pt-br" class="ie9">
+<![endif]-->
+<!--[if !IE]><!-->
+<html lang="pt-br">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<title>{{ title }}</title>
+
+
+	{% for metadata in metadatas %}
+		<meta name="{{metadata.name}}" content="{{metadata.content}}">
+	{% endfor %}
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="favicon" href="/img/general/logotipo-tempook.png">
+	<link rel="stylesheet" href="/css/index.css">
+
+</head>
+<body id="{{id}}">
+
+	{% include "../modules/header.nunj" %}
+
+	<main>
+		<article>
+			{% block content %}
+			{% endblock %}
+		</article>
+	</main>
+
+	{% include "../modules/footer.nunj" %}
+	{% include "../modules/modals.nunj" %}
+
+	<script src="/js/index.js"></script>
+</body>
+</html>

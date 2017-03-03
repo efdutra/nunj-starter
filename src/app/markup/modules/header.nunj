@@ -1,0 +1,27 @@
+<header class="default">
+    <div class="inner">
+    	<div class="logo">
+            <a href="inicio.html">
+                <span>Site Title</span>
+                <img src="/img/general/x.svg" alt="Site Logo">
+            </a>
+        </div>
+    	<nav>
+            <input type="checkbox" class="menu-toggle">
+    		<ul class="menu-content">
+    			{% for pageLink in general.pagesLink %}
+    				<li>
+                        <a id="anchor-{{pageLink.anchor}}" class="{% if id == pageLink.id %} active {% endif %}{% if pageLink.isModalAnchor%} modal-anchor {% endif %}" href="{{pageLink.url}}" {% if pageLink.isModalAnchor%} data-modal="#modal-{{pageLink.anchor}}" {% endif %}>{{pageLink.name}}</a>
+                        {% if pageLink.subMenu %}
+                            <ul class="submenu">
+                                {% for submenuLink in pageLink.subMenu %}
+                                    <li><a class="{% if submenuLink.isCurrent %} active {% endif %}{% if submenuLink.isModalAnchor%} modal-anchor {% endif %}" href="{{submenuLink.url}}" {% if submenuLink.isModalAnchor%} data-modal="#modal-{{submenuLink.anchor}}" {% endif %}>► {{submenuLink.name}}</a></li>        
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+    			{% endfor %}
+    		</ul>
+    	</nav>
+    </div>
+</header>

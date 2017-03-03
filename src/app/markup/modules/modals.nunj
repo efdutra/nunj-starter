@@ -1,0 +1,6 @@
+<div class="modals">
+	<div id="modal-x" class="modal">
+		{#% include "../modules/header-full.nunj" %#}
+		{#% include "../partials/login.nunj" %#}
+	</div>
+</div>

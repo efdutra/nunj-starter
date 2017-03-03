@@ -1,0 +1,11 @@
+main {    
+    min-height: 100%;
+}
+
+@include media('tablet'){
+    main {}
+}
+
+@include media('desktop'){
+    main {}
+}
