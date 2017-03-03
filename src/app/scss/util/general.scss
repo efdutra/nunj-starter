@@ -20,15 +20,6 @@ em {
     padding: 0 5%;
 }
 
-.loading {
-    background: url(/img/general/loading.gif) no-repeat center center;
-    background-size: 50px;
-}
-
-.loading.l-200 {
-    background-size: 200px;
-}
-
 @include scrollbars(10px, darken($primary, 10));
 
 @include media('tablet'){}

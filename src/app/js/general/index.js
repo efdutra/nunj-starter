@@ -1,6 +1,5 @@
 function init(){
 
-   require('../plugins/scroll-animate').init();
    require('../modules/header').init();
 
 }
